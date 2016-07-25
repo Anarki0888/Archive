@@ -1,0 +1,4 @@
+en gros tu dois créer un fichier who_am_i.sh avec la fonction nano. et y entrer
+une ligne de commande te permettantd'afficher la valeur du dn de ton ldap
+pour cela tu dois utiliser cut et ldapwhoami
+ldapsearch "people" cn | grep "uid=z" | sort -b

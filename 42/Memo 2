@@ -1,0 +1,125 @@
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write (1, &c, 1);
+}
+void	ft_print_reverse_alphabet(void)
+{
+	char	c;
+
+	c = 'z';
+	while (c >= 'a')
+	{
+		ft_putchar(c);
+		c = c - 1;
+	}
+}
+int		main(void)
+{
+	ft_print_reverse_alphabet();
+	return (0);
+}
+
+
+#include	<unistd.h>
+
+	void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void ft_is_negative(int n)
+{
+	if(n<0)
+		ft_putchar('N');
+	else
+		ft_putchar('P');
+}
+
+int	main()
+{
+ft_is_negative(-1);
+ft_is_negative(0);
+ft_is_negative(1);
+}
+
+
+ 13 #include    <stdio.h>
+ 14
+ 15 int         ft_prout(int nb)
+ 16 {
+ 17     if (nb > 0)
+ 18         return (nb * ft_prout(nb - 1));
+ 19     return (1);
+ 20 }
+ 21
+ 22
+ 23 int         ft_iterative_factorial(int nb)
+ 24 {
+ 25     int     sum;
+ 26
+ 27     sum = 1;
+ 28     while (nb > 0)
+ 29     {
+ 30         sum = sum * nb;
+ 31         nb--;
+ 32     }
+ 33     return (sum);
+ 34 }
+ 35 int main()
+ 36 {
+ 37     printf("num -> %d\n", ft_prout(5));
+ 38     return(0);
+ 39 }
+
+
+ ~
+  13 #include    <stdio.h>
+  14
+  15 int     ft_iterative_power(int nb, int power)
+  16 {
+  17     int result;
+  18     int i;
+  19
+  20     result = nb;
+  21     i = 1;
+  22     if (power <0)
+  23         return (0);
+  24     else if (power == 0)
+  25         return (1);
+  26     while (i < power)
+  27     {
+  28         result *= nb;
+  29         i++;
+  30     }
+  31     return (result);
+  32 }
+  33
+  34 int     main()
+  35 {
+  36     int val;
+  37
+  38     val = ft_iterative_power(5, 2);
+  39     printf("%d\n", val);
+  40     return(0);
+  41 }
+
+  int     ft_recursive_power(int nb, int power)
+  {
+      int     result;
+
+      result = nb;
+      if (power < 0)
+      {
+          return (0);
+      }
+      else if (power == 0)
+      {
+          return (1);
+      }
+      else
+      {
+          return (result * (ft_recursive_power(nb, power - 1)));
+      }
+  }
